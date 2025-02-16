@@ -33,6 +33,11 @@ if ( ! is_admin() ) {
 	return;
 }
 
+$get = map_deep( wp_unslash( $_GET ), 'sanitize_text_field' );
+if ( isset ($get['action']) && $get['action'] === 'activate' ) {
+	return;
+}
+
 define( 'LEAFEXT_UPDATE_FILE', __FILE__ ); // /pfad/wp-content/plugins/leafext-update-github/leafext-update-github.php .
 define( 'LEAFEXT_UPDATE_DIR', plugin_dir_path( __FILE__ ) ); // /pfad/wp-content/plugins/leafext-update-github/ .
 define( 'LEAFEXT_UPDATE_URL', WP_PLUGIN_URL . '/' . basename( LEAFEXT_UPDATE_DIR ) ); // https://url/wp-content/plugins/leafext-update-github/ .
@@ -71,6 +76,10 @@ if ( ! function_exists( 'leafext_plugin_active' ) ) {
 			return false;
 		}
 	}
+}
+
+if ( ! function_exists( 'get_plugins' ) ) {
+	require_once ABSPATH . 'wp-admin/includes/plugin.php';
 }
 
 // param slug of php file, returns dir
@@ -171,7 +180,7 @@ function leafext_update_puc_error( $error, $response = null, $url = null, $slug 
 	$git_repos  = leafext_get_repos();
 	$valid_slug = false;
 	foreach ( $git_repos as $git_repo => $value ) {
-		if ( $slug === $git_repos[ $git_repo ]['local'] ) {
+		if ( $slug === basename( dirname( $git_repos[ $git_repo ]['local'] ) ) ) {
 			$valid_slug = true;
 		}
 	}
