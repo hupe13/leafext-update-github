@@ -1,8 +1,8 @@
-===  Update Management for Leaflet Map Extensions and DSGVO Github ===
+===  Manage Updates of Leaflet Map Extensions and DSGVO Github Versions ===
 
 Contributors: hupe13
 Tested up to: 6.7
-Stable tag: 250216
+Stable tag: 250218
 Requires at least: 6.0
 Requires PHP: 7.4
 License: GPLv2 or later

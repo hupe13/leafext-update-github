@@ -1,4 +1,4 @@
-# Update Management for Leaflet Map Extensions and DSGVO Github
+# Manage Updates of Leaflet Map Extensions and DSGVO Github Versions
 
 ## Description
 
