@@ -2,7 +2,7 @@
 /**
  * Backend Menus
  *
- * @package Manage Updates of Leaflet Map Extensions and DSGVO Github Versions
+ * @package Updates for Leaflet Map Extensions and DSGVO Github Versions
  **/
 
 // Direktzugriff auf diese Datei verhindern.
@@ -13,7 +13,7 @@ function leafext_add_action_update_links( $actions ) {
 	$actions[] = '<a href="' . esc_url( admin_url( 'admin.php' ) . '?page=' . LEAFEXT_UPDATE_NAME ) . '">' . esc_html__( 'Settings', 'leafext-update-github' ) . '</a>';
 	return $actions;
 }
-add_filter( 'plugin_action_links_' . LEAFEXT_UPDATE_NAME . '/' . 'leafext-update-github.php' , 'leafext_add_action_update_links' );
+add_filter( 'plugin_action_links_' . LEAFEXT_UPDATE_NAME . '/leafext-update-github.php', 'leafext_add_action_update_links' );
 
 // Add settings to network plugin page
 function leafext_network_add_action_update_links( $actions, $plugin ) {

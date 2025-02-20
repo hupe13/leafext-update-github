@@ -1,9 +1,10 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: DSGVO snippet for Leaflet Map and its Extensions Github\n"
+"Project-Id-Version: Updates for Leaflet Map Extensions and DSGVO Github "
+"Versions\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-16 16:15+0000\n"
+"POT-Creation-Date: 2025-02-20 19:53+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -13,18 +14,18 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.6.11; wp-6.6.2\n"
-"X-Domain: dsgvo-leaflet-map-github"
+"X-Loco-Version: 2.7.1; wp-6.7.2\n"
+"X-Domain: leafext-update-github"
 
-#: admin.php:124
+#: leafext-update-menus.php:46
 msgid "Github Repositories managed by this plugin"
 msgstr ""
 
-#: admin.php:56
+#: github/github-settings.php:15
 msgid "Github token"
 msgstr ""
 
-#: admin.php:95
+#: github/github-settings.php:82
 msgid "Github token to receive updates in WordPress way"
 msgstr ""
 
@@ -40,27 +41,44 @@ msgstr ""
 msgid "hupe13"
 msgstr ""
 
+#. Description of the plugin
+msgid ""
+"If you have installed the Github versions of Leaflet Map plugins from hupe13 "
+"on a multisite, you can receive the updates here."
+msgstr ""
+
 #. %s is a link.
-#: admin.php:108
+#: github/github-functions.php:105
+#, php-format
+msgid ""
+"If you want to receive updates in WordPress way, go to the %1$smain site "
+"dashboard%2$s and activate the plugin here or install and activate %3$s."
+msgstr ""
+
+#. %s is a link.
+#: github/github-settings.php:95
 #, php-format
 msgid "Maybe you need a %1$sGithub token%2$s to receive updates successfully."
 msgstr ""
 
-#: admin.php:120
+#: github/github-settings.php:107
 msgid "Reset"
 msgstr ""
 
-#: leafext-update-github.php:51 leafext-update-github.php:59
+#: leafext-update-menus.php:13 leafext-update-menus.php:21
 msgid "Settings"
 msgstr ""
 
 #. Name of the plugin
-#. Description of the plugin
-msgid "Update Management for Leaflet Map Extensions and DSGVO Github"
+msgid "Updates for Leaflet Map Extensions and DSGVO Github Versions"
+msgstr ""
+
+#: github/github-functions.php:102
+msgid "Updates in WordPress way"
 msgstr ""
 
 #. %s is a link.
-#: admin.php:101
+#: github/github-settings.php:88
 #, php-format
 msgid "You need a %1$sGithub token%2$s to receive updates successfully."
 msgstr ""
