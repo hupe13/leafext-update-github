@@ -38,22 +38,6 @@ if ( ! is_main_site() ) {
 	return;
 }
 
-// Return if a plugin de/activation is running
-//phpcs:ignore WordPress.Security.NonceVerification.Recommended -- wird nur abgefragt, nonce wird woanders gesetzt
-$get = map_deep( wp_unslash( $_GET ), 'sanitize_text_field' );
-if ( isset( $get['action'] ) && $get['action'] === 'activate' ) {
-	return;
-}
-if ( isset( $get['action'] ) && $get['action'] === 'deactivate' ) {
-	return;
-}
-if ( isset( $get['deactivate'] ) && $get['deactivate'] === 'true' ) {
-	return;
-}
-if ( isset( $get['activate'] ) && $get['activate'] === 'true' ) {
-	return;
-}
-
 define( 'LEAFEXT_UPDATE_FILE', __FILE__ ); // /pfad/wp-content/plugins/leafext-update-github/leafext-update-github.php .
 define( 'LEAFEXT_UPDATE_DIR', plugin_dir_path( __FILE__ ) ); // /pfad/wp-content/plugins/leafext-update-github/ .
 define( 'LEAFEXT_UPDATE_URL', WP_PLUGIN_URL . '/' . basename( LEAFEXT_UPDATE_DIR ) ); // https://url/wp-content/plugins/leafext-update-github/ .
@@ -73,7 +57,7 @@ require_once LEAFEXT_UPDATE_DIR . 'leafext-update-menus.php';
 if ( ! function_exists( 'leafext_get_repos' ) ) {
 	require_once LEAFEXT_UPDATE_DIR . 'github/github-functions.php';
 }
-if ( ! class_exists( 'YahnisElsts\PluginUpdateChecker\v5\PucFactory' ) ) {
+if ( ! function_exists( 'leafext_update_puc_error' ) ) {
 	require_once LEAFEXT_UPDATE_DIR . 'github/github-settings.php';
 	require_once LEAFEXT_UPDATE_DIR . 'github/github-check-update.php';
 }
