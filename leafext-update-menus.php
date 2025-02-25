@@ -24,28 +24,20 @@ function leafext_network_add_action_update_links( $actions, $plugin ) {
 }
 add_filter( 'network_admin_plugin_action_links', 'leafext_network_add_action_update_links', 10, 4 );
 
-/**
- * Add menu page for admin
- */
-function leafext_update_add_page() {
-	// Add Submenu.
-	$leafext_admin_page = add_submenu_page(
-		'options-general.php',
-		'Github Update',
-		'Github Update',
-		'manage_options',
-		LEAFEXT_UPDATE_NAME,
-		'leafext_update_admin'
-	);
-}
-add_action( 'admin_menu', 'leafext_update_add_page', 99 );
-
-// Admin page for the plugin
-function leafext_update_admin() {
-	leafext_token_form();
-	echo '<h3>' . esc_html__( 'Github Repositories managed by this plugin', 'leafext-update-github' ) . '</h3>';
-	echo '<pre>';
-	//phpcs:ignore WordPress.PHP.DevelopmentFunctions.error_log_var_dump
-	var_dump( leafext_get_repos() );
-	echo '</pre>';
+// Display array as table
+if ( ! function_exists( 'leafext_html_table' ) ) {
+	function leafext_html_table( $data = array() ) {
+		$rows      = array();
+		$cellstyle = ( is_singular() || is_archive() ) ? "style='border:1px solid #195b7a;'" : '';
+		foreach ( $data as $row ) {
+			$cells = array();
+			foreach ( $row as $cell ) {
+				$cells[] = '<td ' . $cellstyle . ">{$cell}</td>";
+			}
+			$rows[] = '<tr>' . implode( '', $cells ) . '</tr>' . "\n";
+		}
+		$head = '<div style="width:' . ( ( is_singular() || is_archive() ) ? '100' : '80' ) . '%;">';
+		$head = $head . '<figure class="wp-block-table aligncenter is-style-stripes"><table border=1>';
+		return $head . implode( '', $rows ) . '</table></figure></div>';
+	}
 }

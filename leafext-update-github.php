@@ -3,7 +3,7 @@
  * Plugin Name:       Updates for Leaflet Map Extensions and DSGVO Github Versions
  * Plugin URI:        https://github.com/hupe13/leafext-update-github
  * Description:       If you have installed the Github versions of Leaflet Map plugins from hupe13 on a multisite, you can receive the updates here.
- * Version:           250220
+ * Version:           250225
  * Requires at least: 6.0
  * Requires PHP:      7.4
  * Author:            hupe13
@@ -38,10 +38,19 @@ if ( ! is_main_site() ) {
 	return;
 }
 
-// Return if a plugin activation is running
+// Return if a plugin de/activation is running
 //phpcs:ignore WordPress.Security.NonceVerification.Recommended -- wird nur abgefragt, nonce wird woanders gesetzt
 $get = map_deep( wp_unslash( $_GET ), 'sanitize_text_field' );
 if ( isset( $get['action'] ) && $get['action'] === 'activate' ) {
+	return;
+}
+if ( isset( $get['action'] ) && $get['action'] === 'deactivate' ) {
+	return;
+}
+if ( isset( $get['deactivate'] ) && $get['deactivate'] === 'true' ) {
+	return;
+}
+if ( isset( $get['activate'] ) && $get['activate'] === 'true' ) {
 	return;
 }
 
@@ -49,25 +58,6 @@ define( 'LEAFEXT_UPDATE_FILE', __FILE__ ); // /pfad/wp-content/plugins/leafext-u
 define( 'LEAFEXT_UPDATE_DIR', plugin_dir_path( __FILE__ ) ); // /pfad/wp-content/plugins/leafext-update-github/ .
 define( 'LEAFEXT_UPDATE_URL', WP_PLUGIN_URL . '/' . basename( LEAFEXT_UPDATE_DIR ) ); // https://url/wp-content/plugins/leafext-update-github/ .
 define( 'LEAFEXT_UPDATE_NAME', basename( LEAFEXT_UPDATE_DIR ) ); // leafext-update-github
-
-if ( ! function_exists( 'leafext_plugin_active' ) ) {
-	function leafext_plugin_active( $slug ) {
-		$plugins = glob( WP_PLUGIN_DIR . '/*/' . $slug . '.php' );
-		foreach ( $plugins as $plugin ) {
-			$split = array_map( 'strrev', explode( '/', strrev( $plugin ) ) );
-			if ( is_plugin_active( trailingslashit( $split[1] ) . $split[0] ) ) {
-				if ( $split[1] === 'leafext-update-github' ) {
-					return true;
-				}
-				if ( $split[1] !== $slug ) {
-					return 'github';
-				}
-				return true;
-			}
-		}
-		return false;
-	}
-}
 
 // for translating a plugin
 function leafext_update_github_textdomain() {
@@ -83,5 +73,7 @@ require_once LEAFEXT_UPDATE_DIR . 'leafext-update-menus.php';
 if ( ! function_exists( 'leafext_get_repos' ) ) {
 	require_once LEAFEXT_UPDATE_DIR . 'github/github-functions.php';
 }
-require_once LEAFEXT_UPDATE_DIR . 'github/github-settings.php';
-require_once LEAFEXT_UPDATE_DIR . 'github/github-check-update.php';
+if ( ! class_exists( 'YahnisElsts\PluginUpdateChecker\v5\PucFactory' ) ) {
+	require_once LEAFEXT_UPDATE_DIR . 'github/github-settings.php';
+	require_once LEAFEXT_UPDATE_DIR . 'github/github-check-update.php';
+}
