@@ -21,5 +21,5 @@ The plugin works on a single site installation also.
 
 * Download the [ZIP file](https://github.com/hupe13/leafext-github-update/archive/refs/heads/main.zip) and install it on the plugin page of your WordPress installation.
 * Network Activate it.
-* On main site go to Settings - GitHub Update and set a Github Token if needed.
+* On main site go to Leaflet - GitHub Update and set a Github Token if needed.
 * You will get updates with the [Plugin Update Checker](https://github.com/YahnisElsts/plugin-update-checker).
