@@ -2,7 +2,7 @@
 
 Contributors: hupe13
 Tested up to: 6.7
-Stable tag: 250225
+Stable tag: 250301
 Requires at least: 6.0
 Requires PHP: 7.4
 License: GPLv2 or later

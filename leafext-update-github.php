@@ -3,7 +3,7 @@
  * Plugin Name:       Updates for Leaflet Map Extensions and DSGVO Github Versions
  * Plugin URI:        https://github.com/hupe13/leafext-update-github
  * Description:       If you have installed the Github versions of Leaflet Map plugins from hupe13 on a multisite, you can receive the updates here.
- * Version:           250225
+ * Version:           250301
  * Requires at least: 6.0
  * Requires PHP:      7.4
  * Author:            hupe13
