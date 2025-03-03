@@ -10,7 +10,7 @@ defined( 'ABSPATH' ) || die();
 
 // Add settings to plugin page
 function leafext_add_action_update_links( $actions ) {
-	$actions[] = '<a href="' . esc_url( admin_url( 'admin.php' ) . '?page=' . LEAFEXT_UPDATE_NAME ) . '">' . esc_html__( 'Settings', 'leafext-update-github' ) . '</a>';
+	$actions[] = '<a href="' . esc_url( admin_url( 'admin.php' ) . '?page=github-settings' ) . '">' . esc_html__( 'Settings', 'leafext-update-github' ) . '</a>';
 	return $actions;
 }
 add_filter( 'plugin_action_links_' . LEAFEXT_UPDATE_NAME . '/leafext-update-github.php', 'leafext_add_action_update_links' );
@@ -18,7 +18,7 @@ add_filter( 'plugin_action_links_' . LEAFEXT_UPDATE_NAME . '/leafext-update-gith
 // Add settings to network plugin page
 function leafext_network_add_action_update_links( $actions, $plugin ) {
 	if ( $plugin === 'leafext-update-github/leafext-update-github.php' ) {
-			$actions[] = '<a href="' . esc_url( admin_url( 'admin.php' ) . '?page=' . LEAFEXT_UPDATE_NAME ) . '">' . esc_html__( 'Settings', 'leafext-update-github' ) . '</a>';
+			$actions[] = '<a href="' . esc_url( admin_url( 'admin.php' ) . '?page=github-settings' ) . '">' . esc_html__( 'Settings', 'leafext-update-github' ) . '</a>';
 	}
 	return $actions;
 }
