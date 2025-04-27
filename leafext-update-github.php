@@ -1,9 +1,10 @@
 <?php
 /**
- * Plugin Name:       Updates for Leaflet Map Extensions and DSGVO Github Versions
- * Plugin URI:        https://github.com/hupe13/leafext-update-github
- * Description:       If you have installed the Github versions of Leaflet Map plugins from hupe13 on a multisite, you can receive the updates here.
- * Version:           250303
+ * Plugin Name:       Updates for plugins from hupe13 hosted on Github
+ * Description:       If you have installed the Github versions of plugins from hupe13 on a multisite, you can receive the updates here.
+ * Plugin URI:        https://leafext.de/en/
+ * Update URI:        https://github.com/hupe13/leafext-update-github
+ * Version:           250427
  * Requires at least: 6.0
  * Requires PHP:      7.4
  * Author:            hupe13
@@ -11,7 +12,7 @@
  * Network:           true
  * License:           GPL v2 or later
  *
- * @package Updates for Leaflet Map Extensions and DSGVO Github Versions
+ * @package Updates for plugins from hupe13 hosted on Github
  **/
 
 // Direktzugriff auf diese Datei verhindern.
@@ -43,15 +44,15 @@ define( 'LEAFEXT_UPDATE_DIR', plugin_dir_path( __FILE__ ) ); // /pfad/wp-content
 define( 'LEAFEXT_UPDATE_URL', WP_PLUGIN_URL . '/' . basename( LEAFEXT_UPDATE_DIR ) ); // https://url/wp-content/plugins/leafext-update-github/ .
 define( 'LEAFEXT_UPDATE_NAME', basename( LEAFEXT_UPDATE_DIR ) ); // leafext-update-github
 
+require_once LEAFEXT_UPDATE_DIR . 'leafext-update-menus.php';
+
 // for translating a plugin
-function leafext_update_github_textdomain() {
+function leafext_update_github_plugin_textdomain() {
 	if ( get_locale() === 'de_DE' ) {
-		load_plugin_textdomain( 'leafext-update-github', false, LEAFEXT_UPDATE_NAME . '/github/lang/' );
+		$ret = load_plugin_textdomain( 'leafext-update-github', false, LEAFEXT_UPDATE_NAME . '/github/lang/' );
 	}
 }
-add_action( 'plugins_loaded', 'leafext_update_github_textdomain' );
-
-require_once LEAFEXT_UPDATE_DIR . 'leafext-update-menus.php';
+add_action( 'plugins_loaded', 'leafext_update_github_plugin_textdomain' );
 
 // Github Update
 if ( ! function_exists( 'leafext_get_repos' ) ) {

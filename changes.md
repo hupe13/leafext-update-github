@@ -1,11 +1,9 @@
-# 250303, 250225, 250221, 250220
+# Changelog
 
-Organize Updates for all my Leaflet Map Plugins on Github
+### 250427
 
-# 250218
+* update procedure for all my plugins adjusted
 
-Github Updates
+### 250216
 
-# 250216
-
-Initial release
+* Initial release
