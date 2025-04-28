@@ -4,7 +4,7 @@
  * Description:       If you have installed the Github versions of plugins from hupe13 on a multisite, you can receive the updates here.
  * Plugin URI:        https://leafext.de/en/
  * Update URI:        https://github.com/hupe13/leafext-update-github
- * Version:           250427
+ * Version:           250428
  * Requires at least: 6.0
  * Requires PHP:      7.4
  * Author:            hupe13
