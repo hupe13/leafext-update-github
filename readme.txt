@@ -2,7 +2,7 @@
 
 Contributors: hupe13
 Tested up to: 6.8
-Stable tag: 250428
+Stable tag: 251110
 Requires at least: 6.0
 Requires PHP: 7.4
 License: GPLv2 or later
@@ -10,6 +10,8 @@ License: GPLv2 or later
 If you have installed the Github versions of Leaflet Map plugins from hupe13 on a multisite, you can receive the updates here.
 
 == Description ==
+
+This is the last release. Please switch to [ghu-update-puc](https://github.com/hupe13/ghu-update-puc/)
 
 WordPress 6.5 führt einen neuen Header ein: ["Requires Plugins:"](https://make.wordpress.org/core/2024/03/05/introducing-plugin-dependencies-in-wordpress-6-5/). In einer Multisite-Installation funktionieren Updates von nicht von WordPress gehosteten Plugins nur, wenn sie auf der ersten Seite (Hauptseite) aktiv sind. Allerdings möchte man manchmal nicht alle vom Plugin geforderten Plugins dort aktivieren. Dieses Plugin übernimmt die Updates von all meinen auf Github gehosteten WordPress-Plugins.
 

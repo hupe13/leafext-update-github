@@ -1,5 +1,7 @@
 # Updates for plugins from hupe13 hosted on Github
 
+This is the last release. Please switch to [ghu-update-puc](https://github.com/hupe13/ghu-update-puc/)
+
 ## Description
 
 WordPress 6.5 führt einen neuen Header ein: ["Requires Plugins:"](https://make.wordpress.org/core/2024/03/05/introducing-plugin-dependencies-in-wordpress-6-5/). In einer Multisite-Installation funktionieren Updates von nicht von WordPress gehosteten Plugins nur, wenn sie auf der ersten Seite (Hauptseite) aktiv sind. Allerdings möchte man manchmal nicht alle vom Plugin geforderten Plugins dort aktivieren. Dieses Plugin übernimmt die Updates von all meinen auf Github gehosteten WordPress-Plugins.
