@@ -1,5 +1,9 @@
 # Changelog
 
+### 251118
+
+* EOL
+
 ### 251110
 
 * This is the last release. Please switch to [ghu-update-puc](https://github.com/hupe13/ghu-update-puc/)

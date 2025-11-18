@@ -1,10 +1,10 @@
 <?php
 /**
  * Plugin Name:       Updates for plugins from hupe13 hosted on Github
- * Description:       If you have installed the Github versions of plugins from hupe13 on a multisite, you can receive the updates here.
+ * Description:       EOL: Please use https://github.com/hupe13/ghu-update-puc instead
  * Plugin URI:        https://leafext.de/en/
  * Update URI:        https://github.com/hupe13/leafext-update-github
- * Version:           251110
+ * Version:           251118
  * Requires at least: 6.0
  * Requires PHP:      7.4
  * Author:            hupe13
